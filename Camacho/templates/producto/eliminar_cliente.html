@@ -1,0 +1,16 @@
+
+   <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css" crossorigin="anonymous">
+<form method="POST">
+
+    {%csrf_token%}
+
+
+	<h1>¿Esta seguro de eliminar?</h1>   
+   	{{cliente.nombres}} {{cliente.apellidos}}<br>
+   	cedula: {{cliente.cedula}}<br>
+
+
+   	<input type="submit" value="Eliminar"></input>
+   	<button><a href="/cliente">Cancelar</a></button>
+
+</form>

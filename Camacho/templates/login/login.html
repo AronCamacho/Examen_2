@@ -1,0 +1,24 @@
+{% extends 'master.html' %}
+{% block contenido %}
+	<div class="well ">
+	   <<h2>Ingresar al sistema</h2>
+
+	   <form method="POST"> {% csrf_token %}
+	   	{% for field in f %}
+	   	
+	   	<div>
+	   		{{field.label_tag}}
+	   		{{ field }}
+
+
+	   	</div>
+        {% endfor %}
+	   	
+
+       <input type="submit" name="Ingresar" class="btn btn-sucess">
+
+
+	   </form>
+	 </div>
+
+{% endblock %}

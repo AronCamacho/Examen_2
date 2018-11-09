@@ -1,0 +1,49 @@
+{% extends 'master.html' %}
+
+{% block contenido %}
+ 
+ 	<button class="btn btn-info" ><a href="crear">CREAR</a></button>
+
+    <table class="table table-bordered table-hover">
+  
+ 	<thead>
+ 		<tr>
+ 	
+		 	<td>Codigo</td>
+		 	<td>nombre</td>
+		 	<td>categoria</td>
+		    <td>marca</td>
+		    <td>precio</td>
+		    <td>descripcion</td>
+		    
+		 	<td>Opciones</td>
+        </tr>
+	</thead>
+    
+	{%for c in lista%}
+
+	<tbody>
+
+		<td>{{c.codigo}}</td>
+		<td>{{c.nombre}}</td>
+        <td>{{c.categoria}}</td>
+        <td>{{c.marca}}</td>
+		<td>{{c.precio}}</td>
+		<td>{{c.descripcion}}</td>
+		
+		
+		
+		<td> <button class="btn btn-info"><a href="modificar?codigo={{c.codigo}}">Modificar</a></button>  <button class="btn"><a href="eliminar?codigo={{c.codigo}}">
+			
+		Eliminar</a> </button></td>
+
+	
+
+	
+    {%endfor%}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load staticfiles %}
+ 
+<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+<center>
+	<img src="{% static 'img/UNL.png'%}">
+	<h1>Univesidad Nacional de Loja</h1>
+</center>
+
+<div>
+	{% if user.is_authenticated %}
+		<p>Bienvenido, <b>{{user.username}}</b> | <a href="{% url 'salir' %}">Cerrar Sesión</a></p>
+	{% else %}
+		<p>Bienvenido. Por favor <a href="{% url 'autenticar' %}"> Ingresar</a></p>
+
+	{% endif%}
+
+	{% for msg in messages %}
+	<div class="alert alert-{{msg.level_tag}}" role="alert">
+		
+		{{msg.message}}
+	</div>
+	{% endfor %}
+</div>
